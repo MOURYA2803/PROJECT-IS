@@ -1,0 +1,70 @@
+// TRIGGERING LIGHTS
+void setup()
+{
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  
+}
+
+void loop()
+{
+  digitalWrite(13, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(10, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(11, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(9, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(12, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+
+// FSR WITH DC MOTOR AS SANITIZER MOTOR
+int FSR = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  Serial.begin(9600);
+  pinMode(8, OUTPUT);
+}
+
+void loop()
+{
+  FSR = analogRead(A0);
+  Serial.print("Analog FSR reading= ");
+  Serial.println(FSR);
+  if (FSR > 450) {
+    digitalWrite(8, HIGH);
+  } else {
+    digitalWrite(8, LOW);
+  }
+  delay(5000); // Delay a little bit to improve simulation performance
+}
+
+// MOTORIZED SHADES OF THE OFFICE
+int Motor = 9;
+int BUTTON = 7;
+
+
+void setup()
+{
+  pinMode(BUTTON, INPUT);
+  pinMode(Motor, OUTPUT);
+}
+
+void loop()
+{ 
+  if(digitalRead(BUTTON) == 1) 
+  { 
+  	digitalWrite(Motor, HIGH);
+  }
+    if (digitalRead(BUTTON) == 0)
+    {
+      digitalWrite(Motor, LOW);
+    }
+  }
