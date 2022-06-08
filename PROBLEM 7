@@ -1,0 +1,51 @@
+// ARDUINO-1
+
+const int analogPin = A0;    // pin that the sensor is attached to
+const int ledPin = 9;       // pin that the LED is attached to
+const int threshold = 400;   // an arbitrary threshold level that's in the range of the analog input
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize serial communications:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the value of the potentiometer:
+  int analogValue = analogRead(analogPin);
+
+  //if analogread>0 let the led glow 
+  int brightness = analogValue/4 ;
+  analogWrite(ledPin, brightness);
+
+  // print the analog value:
+  Serial.println(analogValue);
+  delay(1);        // delay in between reads for stability
+}
+
+// ARDUINO-2
+
+const int analogPin = A0;    // pin that the sensor is attached to
+const int ledPin = 9;       // pin that the LED is attached to
+const int threshold = 400;   // an arbitrary threshold level that's in the range of the analog input
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize serial communications:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the value of the potentiometer:
+  int analogValue = analogRead(analogPin);
+
+  //if analogread>0 let the led glow 
+  int brightness = analogValue/4 ;
+  analogWrite(ledPin, brightness);
+
+  // print the analog value:
+  Serial.println(analogValue);
+  delay(1);        // delay in between reads for stability
+}
