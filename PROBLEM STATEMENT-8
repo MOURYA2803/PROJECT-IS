@@ -23,7 +23,7 @@ void loop()
   delay(1000); // Wait for 1000 millisecond(s)
 }
 
-// FSR WITH DC MOTOR AS SANITIZER MOTOR
+// FSR WITH DC MOTOR CONSIDERDED AS SANITIZER MOTOR
 int FSR = 0;
 
 void setup()
